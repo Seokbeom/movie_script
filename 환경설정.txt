@@ -1,0 +1,103 @@
+pip3 install selenium
+pip3 install hyperopt
+pip3 install hyperas 
+<error>
+
+C:\Users\seok0\AppData\Local\Programs\Python\Python36\python.exe C:/Users/seok0/Desktop/대학원/연구/movie_sentiment/sentimental-analysis-in-movie-script/demo.py
+C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "C:/Users/seok0/Desktop/대학원/연구/movie_sentiment/sentimental-analysis-in-movie-script/demo.py", line 8, in <module>
+    import ml
+  File "C:\Users\seok0\Desktop\대학원\연구\movie_sentiment\sentimental-analysis-in-movie-script\ml.py", line 7, in <module>
+    from hyperas import optim
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperas\optim.py", line 9, in <module>
+    from nbconvert import PythonExporter
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\nbconvert\__init__.py", line 4, in <module>
+    from .exporters import *
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\nbconvert\exporters\__init__.py", line 3, in <module>
+    from .exporter_locator import export_by_name
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\nbconvert\exporters\exporter_locator.py", line 12, in <module>
+    from .templateexporter import TemplateExporter
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\nbconvert\exporters\templateexporter.py", line 18, in <module>
+    from jinja2 import (
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\jinja2\__init__.py", line 33, in <module>
+    from jinja2.environment import Environment, Template
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\jinja2\environment.py", line 15, in <module>
+    from jinja2 import nodes
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\jinja2\nodes.py", line 19, in <module>
+    from jinja2.utils import Markup
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\jinja2\utils.py", line 647, in <module>
+    from markupsafe import Markup, escape, soft_unicode
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\markupsafe\__init__.py", line 14, in <module>
+    from markupsafe._compat import text_type, string_types, int_types, \
+ModuleNotFoundError: No module named 'markupsafe._compat'
+
+pip3 uninstall MarkupSafe 후 https://dojang.io/mod/page/view.php?id=1169 참고해서 버전에 맞는 whl 파일 다운
+나만의 경로에 그 파일 저장
+pip3 install 그경로/whl파일.whl
+
+<<다른 에러>>
+Traceback (most recent call last):
+  File "C:/Users/seok0/Desktop/대학원/연구/movie_sentiment/sentimental-analysis-in-movie-script/demo.py", line 68, in <module>
+    model = ml.random_search()
+  File "C:\Users\seok0\Desktop\대학원\연구\movie_sentiment\sentimental-analysis-in-movie-script\ml.py", line 142, in random_search
+    trials = Trials())
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperas\optim.py", line 67, in minimize
+    verbose=verbose)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperas\optim.py", line 133, in base_minimizer
+    return_argmin=True),
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 307, in fmin
+    return_argmin=return_argmin,
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\base.py", line 635, in fmin
+    return_argmin=return_argmin)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 314, in fmin
+    pass_expr_memo_ctrl=pass_expr_memo_ctrl)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\base.py", line 786, in __init__
+    pyll.toposort(self.expr)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\pyll\base.py", line 715, in toposort
+    assert order[-1] == expr
+TypeError: 'generator' object is not subscriptable
+
+pip3 install networkx==1.11 (https://github.com/maxpumperla/hyperas) 로 해결
+
+<<다른 에러>>
+ceback (most recent call last):
+  File "C:/Users/seok0/Desktop/대학원/연구/movie_sentiment/sentimental-analysis-in-movie-script/demo.py", line 68, in <module>
+    model = ml.random_search()
+  File "C:\Users\seok0\Desktop\대학원\연구\movie_sentiment\sentimental-analysis-in-movie-script\ml.py", line 142, in random_search
+    trials = Trials())
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperas\optim.py", line 67, in minimize
+    verbose=verbose)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperas\optim.py", line 133, in base_minimizer
+    return_argmin=True),
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 307, in fmin
+    return_argmin=return_argmin,
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\base.py", line 635, in fmin
+    return_argmin=return_argmin)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 320, in fmin
+    rval.exhaust()
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 199, in exhaust
+    self.run(self.max_evals - n_done, block_until_done=self.async)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 173, in run
+    self.serial_evaluate()
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\fmin.py", line 92, in serial_evaluate
+    result = self.domain.evaluate(spec, ctrl)
+  File "C:\Users\seok0\AppData\Local\Programs\Python\Python36\lib\site-packages\hyperopt\base.py", line 840, in evaluate
+    rval = self.fn(pyll_rval)
+  File "C:\Users\seok0\Desktop\대학원\연구\movie_sentiment\sentimental-analysis-in-movie-script\temp_model.py", line 148, in keras_fmin_fnct
+  File "C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\keras\models.py", line 963, in fit
+    validation_steps=validation_steps)
+  File "C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\keras\engine\training.py", line 1705, in fit
+    validation_steps=validation_steps)
+  File "C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\keras\engine\training.py", line 1255, in _fit_loop
+    callbacks.on_epoch_end(epoch, epoch_logs)
+  File "C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\keras\callbacks.py", line 77, in on_epoch_end
+    callback.on_epoch_end(epoch, logs)
+  File "C:\Users\seok0\AppData\Roaming\Python\Python36\site-packages\keras\callbacks.py", line 339, in on_epoch_end
+    self.progbar.update(self.seen, self.log_values)
+AttributeError: 'ProgbarLogger' object has no attribute 'log_values'
+
+Process finished with exit code 1
+
